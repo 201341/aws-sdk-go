@@ -8,7 +8,6 @@ import (
 	"io"
 	"net/http"
 	"net/url"
-	"path"
 	"reflect"
 	"strconv"
 	"strings"
@@ -241,8 +240,8 @@ func cleanPath(u *url.URL) {
 	hasSlash := strings.HasSuffix(u.Path, "/")
 
 	// clean up path, removing duplicate `/`
-	u.Path = path.Clean(u.Path)
-	u.RawPath = path.Clean(u.RawPath)
+	// u.Path = path.Clean(u.Path)
+	// u.RawPath = path.Clean(u.RawPath)
 
 	if hasSlash && !strings.HasSuffix(u.Path, "/") {
 		u.Path += "/"
